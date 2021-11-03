@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/exchangeListFragment">
+
+    <fragment
+        android:id="@+id/exchangeListFragment"
+        android:name="com.yefimoyevhen.exchange.view.fragment.ExchangeListFragment"
+        android:label="@string/exchange_list"
+        tools:layout="@layout/fragment_exchange_list" >
+        <action
+            android:id="@+id/action_exchangeListFragment_to_exchangeDetailsFragment"
+            app:destination="@id/exchangeDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exchangeDetailsFragment"
+        android:name="com.yefimoyevhen.exchange.view.fragment.ExchangeDetailsFragment"
+        android:label="@string/exchange_details"
+        tools:layout="@layout/fragment_exchange_details" >
+        <argument
+            android:name="countryCode"
+            app:argType="string" />
+    </fragment>
+</navigation>
